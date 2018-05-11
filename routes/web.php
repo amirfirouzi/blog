@@ -18,7 +18,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/about', 'HomeController@about');
 Route::get('/contact', 'HomeController@contact');
 
-Route::get('/admin/home', 'admin\HomeController@index');
+Route::get('/admin/home', 'admin\HomeController@index')->name('admin_home');
 
 Route::resources([
     'admin/posts' => 'admin\PostsController',

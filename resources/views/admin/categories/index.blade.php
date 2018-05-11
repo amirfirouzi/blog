@@ -1,5 +1,14 @@
 @extends('admin.layouts.layout',['title' => 'Categories'])
 @section('content')
+    <div class="row">
+        <div class="col-8">
+            <h3>Manage Categories</h3>
+        </div>
+        <div class="col-4 text-right">
+            <button type="button" class="btn btn-success btn-sm">Add New</button>
+        </div>
+    </div>
+
     <div class="table-responsive">
         <table class="table table-hover border-bottom">
             <thead class="thead-dark">

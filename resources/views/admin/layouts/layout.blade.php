@@ -1,42 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Blog Admin</title>
 
     <link rel="stylesheet" href="{{asset('css/admin/app.css')}}">
 </head>
 
-<body>
-@include('admin.layouts.nav-top')
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+@include('admin.layouts.nav')
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{route('admin_home')}}">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">{{$title}}</li>
+        </ol>
 
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                    @include('admin.layouts.nav-sidebar')
-                </ul>
-            </div>
-        </nav>
+        @yield('content')
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">{{$title}}</h1>
+    </div>
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>Copyright © Your Website 2018</small>
             </div>
-            <div class="row">
-                <div class="card card-body bg-light">
-                    @yield('content')
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
+
+    <script type="text/javascript" src="{{asset('js/admin/app.js')}}"></script>
+
 </div>
-<script type="text/javascript" src="{{asset('js/admin/app.js')}}"></script>
 </body>
+
 </html>
