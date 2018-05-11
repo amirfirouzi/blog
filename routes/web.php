@@ -17,3 +17,11 @@ Route::get('/home', 'HomeController@home')->name('home')->middleware('auth');
 Route::get('/', 'HomeController@index');
 Route::get('/about', 'HomeController@about');
 Route::get('/contact', 'HomeController@contact');
+
+Route::get('/admin/home', 'admin\HomeController@index');
+
+Route::resources([
+    'admin/posts' => 'admin\PostsController',
+    'admin/users'=> 'admin\UsersController',
+    'admin/categories' => 'admin\CategoriesController'
+]);
