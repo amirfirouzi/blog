@@ -5,7 +5,7 @@
             <h3>Manage Categories</h3>
         </div>
         <div class="col-4 text-right">
-            <button type="button" class="btn btn-success btn-sm">Add New</button>
+            <button type="button" class="btn btn-success btn-sm" href="{{}}">Add New</button>
         </div>
     </div>
 
