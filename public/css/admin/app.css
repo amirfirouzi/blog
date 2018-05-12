@@ -13956,3 +13956,8 @@ a.text-dark:focus {
   color: white !important;
 }
 
+.actions-form > .form-row > .col {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+

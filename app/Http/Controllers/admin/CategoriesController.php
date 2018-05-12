@@ -4,13 +4,15 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Category;
 
 class CategoriesController extends Controller
 {
 
     public function index()
     {
-        return view('admin.categories.index');
+        $categories = Category::all();
+        return view('admin.categories.index', compact('categories'));
     }
 
     public function create()
@@ -20,17 +22,15 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        Category::create([
+            'name' => request('name')
+        ]);
+        return redirect(route('admin.categories.index'));
     }
 
-    public function show($id)
+    public function edit(Category $category)
     {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     public function update(Request $request, $id)
@@ -38,8 +38,9 @@ class CategoriesController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect(route('admin.categories.index'));
     }
 }
